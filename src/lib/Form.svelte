@@ -49,8 +49,10 @@
     const weightResponses = $responses.map((r) => getWeight(r));
     for (let i = 0; i < weightResponses.length; i++) {
       for (let y = 0; y < $odbory.length; y++) {
-        if ($odbory[y].question.includes(i)) {
-          $odbory[y].points += weightResponses[i];
+        if (weightResponses[i] > 0) {
+          if ($odbory[y].question.includes(i)) {
+            $odbory[y].points += weightResponses[i];
+          }
         }
       }
     }
@@ -88,10 +90,10 @@
   // Animation
 </script>
 
-<form on:submit|preventDefault>
+<form class="form" on:submit|preventDefault>
   <div class="survey">
-    <h2>Survey</h2>
-    <p>Please answer the following questions:</p>
+    <h2>Dotazník</h2>
+    <p>Zodpovedajte nasledujúce otázky:</p>
   </div>
 
   <div class="wrapper">
@@ -105,24 +107,26 @@
       </div>
     {/each}
   </div>
+  <div class="wrapper2">
+    <img
+      on:click={() => changeNo(1)}
+      src="/prev.svg"
+      alt="prev"
+      width="128px"
+    />
+    <img
+      on:click={() => changeNo(0)}
+      src="/next.svg"
+      alt="prev"
+      width="128px"
+    />
+  </div>
 </form>
 <Group
   style="
     position: fixed;
     bottom: 3em;"
 >
-  <Button
-    type="button"
-    style="font-size: 2em; padding: 1em; margin: 1em"
-    variant="unelevated"
-    on:click={() => changeNo(1)}>Prev</Button
-  >
-  <Button
-    type="button"
-    variant="unelevated"
-    style="font-size: 2em; padding: 1em; margin: 1em"
-    on:click={() => changeNo(0)}>Next</Button
-  >
   <Button
     type="submit"
     variant="unelevated"
@@ -132,20 +136,18 @@
 </Group>
 
 <style>
-  form {
-    display: flex;
-    flex-direction: column;
-    row-gap: 3em;
-    padding: 4em;
-    border-radius: 1rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    margin-top: 4em;
-    max-width: 32rem;
-  }
   .wrapper {
     display: flex;
     flex-direction: column;
     max-width: 32rem;
+  }
+  .wrapper2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img {
+    cursor: pointer;
   }
   span {
     font-weight: lighter;
