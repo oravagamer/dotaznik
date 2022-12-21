@@ -1,5 +1,6 @@
 <script>
   import { odbory } from "../stores";
+  import LinearProgress from "@smui/linear-progress";
 </script>
 
 <h2>Výsledky dotazníka</h2>
@@ -8,6 +9,8 @@
     {#if item.percentages}
       <h3>{item.full}</h3>
       <p>{item.percentages}%</p>
+      <LinearProgress progress={item.percentages/100} />
+      <br />
     {/if}
   {/each}
 </div>
@@ -29,5 +32,12 @@
   }
   .results > * {
     margin: 0;
+  }
+
+  h3 {
+    font-weight: 200;
+    margin: 1em 0 !important;
+    font-size: 1.8em;
+
   }
 </style>
