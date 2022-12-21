@@ -13,8 +13,4 @@
     min-height: inherit;
     flex-direction: column;
   }
-  :global(#app) {
-    display: block;
-    min-height: inherit;
-  }
 </style>
