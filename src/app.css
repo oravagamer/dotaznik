@@ -1,8 +1,6 @@
-:root {
-}
-
 body {
   background-color: #3e3e3e;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   display: block;
   height: 100%;
   color: white;
