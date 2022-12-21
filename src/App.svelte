@@ -1,5 +1,5 @@
 <script>
-  import Select from "./lib/Select.svelte";
+  import Select from "./lib/Survey.svelte";
 </script>
 
 <main>
