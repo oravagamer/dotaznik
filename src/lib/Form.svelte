@@ -67,7 +67,7 @@
       return 0;
     });
     $isGenerated = true;
-    // allAnswered();
+    allAnswered();
   }
 
   function changeNo(type) {
@@ -86,7 +86,6 @@
 
   $: $responses = [...Array($questions.length).fill("")];
   // TODO:
-  // Fix width
   // Animation
 </script>
 

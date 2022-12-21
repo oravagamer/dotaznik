@@ -10,7 +10,6 @@
       <h3>{item.full}</h3>
       <p>{item.percentages}%</p>
       <LinearProgress progress={item.percentages / 100} />
-      <br />
     {/if}
   {/each}
 </div>
@@ -22,11 +21,13 @@
   h2 {
     font-size: 3em;
     margin-top: 3em;
+    text-align: center;
   }
   h3 {
     font-weight: 200;
-    margin: 1em 0 !important;
+    margin-bottom: 0.5em !important;
     font-size: 2em;
+    text-align: center;
   }
   p {
     font-size: 1.4em;
