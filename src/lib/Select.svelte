@@ -30,3 +30,4 @@
 
 <!-- Display the selected values -->
 <p>Selected values: {selected1}, {selected2}, {selected3}</p>
+
