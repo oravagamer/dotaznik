@@ -17,7 +17,7 @@
 
 <style>
   div {
-    margin-bottom: 6em;
+    margin-bottom: 12em;
   }
   h2 {
     font-size: 3em;
