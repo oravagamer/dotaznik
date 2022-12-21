@@ -10,6 +10,11 @@
   main {
     display: flex;
     justify-content: center;
-    vertical-align: center;
+    align-items: center;
+    min-height: inherit;
+  }
+  :global(#app) {
+    display: block;
+    min-height: inherit;
   }
 </style>
