@@ -1,7 +1,8 @@
 <script>
   import { fly } from "svelte/transition";
   import LinearProgress from "@smui/linear-progress";
-  import { odbory } from "../stores";
+  import Button from "@smui/button";
+  import { odbory, isGenerated } from "../stores";
 </script>
 
 <h2>Výsledky dotazníka</h2>
@@ -13,16 +14,21 @@
       <LinearProgress progress={item.percentages / 100} />
     {/if}
   {/each}
+  <Button
+    variant="unelevated"
+    style="font-size: 1.5em; margin-top: 2em;"
+    on:click={() => ($isGenerated = false)}>Vyskúšaj ešte raz</Button
+  >
 </div>
 
 <style>
   div {
-    margin-bottom: 12em;
+    margin-bottom: 6em;
   }
   h2 {
     font-size: 3em;
-    margin-top: 3em;
     text-align: center;
+    color: white;
   }
   h3 {
     font-weight: 200;

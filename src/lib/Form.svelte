@@ -2,7 +2,7 @@
   import { fly } from "svelte/transition";
   import { onMount } from "svelte";
   import Radio from "@smui/radio";
-  import Button, { Group } from "@smui/button";
+  import Button from "@smui/button";
   import {
     odbory,
     questions,
@@ -92,8 +92,6 @@
   }
 
   $: $responses = [...Array($questions.length).fill("")];
-  // TODO:
-  // Animation
 </script>
 
 {#if mountReady}
@@ -132,21 +130,14 @@
         width="128px"
       />
     </div>
+    <Button
+      type="submit"
+      variant="unelevated"
+      style="font-size: 1.6em; padding: 1em; margin-top: 1em;"
+      on:click={submit}>Submit</Button
+    >
   </form>
 {/if}
-
-<Group
-  style="
-    position: fixed;
-    bottom: 3em;"
->
-  <Button
-    type="submit"
-    variant="unelevated"
-    style="font-size: 2em; padding: 1em; margin: 1em"
-    on:click={submit}>Submit</Button
-  >
-</Group>
 
 <style>
   .wrapper {

@@ -17,12 +17,7 @@
     position: sticky;
     top: 0;
     width: 100%;
-    background: rgb(48, 41, 171);
-    background: linear-gradient(
-      90deg,
-      rgba(48, 41, 171, 1) 0%,
-      rgba(67, 113, 209, 1) 100%
-    );
+    background-color: rgba(0, 0, 0, 0.5);
     border-bottom: 2px solid #000;
     z-index: 1;
   }
