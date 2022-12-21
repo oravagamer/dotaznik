@@ -14,14 +14,7 @@
     flex-direction: column;
   }
   :global(body) {
-    background: linear-gradient(
-      to bottom,
-      #3b4371,
-      #575b89,
-      #6a6f9e,
-      #7d84b4,
-      #9198ca
-    );
+    background: linear-gradient(to bottom, #505a99, #5c66a9);
     margin: 3rem;
   }
 </style>

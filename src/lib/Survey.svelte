@@ -1,4 +1,7 @@
 <script>
+  import Radio from "@smui/radio";
+  import FormField from "@smui/form-field";
+  import Button, { Label } from "@smui/button";
   import { questions, answers, responses } from "../stores";
 
   // Create a function to update the store
@@ -19,25 +22,28 @@
   <h2>Survey</h2>
   <p>Please answer the following questions:</p>
 
-  {#each $questions as q, i}
-    <h3><span>{i + 1}</span> {q}?</h3>
-    {#each $answers as a, y}
-      <label
-        ><input
-          type="radio"
-          name={`${i}${y}`}
-          bind:group={$responses[i]}
-          value={a}
-        />
-        {a}</label
-      >
+  <div class="wrapper">
+    {#each $questions as q, i}
+      <h3><span>{i + 1}</span> {q}?</h3>
+      {#each $answers as a, y}
+        <div>
+          <Radio name={`${i}${y}`} bind:group={$responses[i]} value={a} />
+          <span>
+            {a}
+          </span>
+        </div>
+      {/each}
     {/each}
-  {/each}
+  </div>
 
-  <button type="submit">Submit</button>
+  <Button type="submit">Submit</Button>
 </form>
 
 <style>
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
   span {
     font-weight: lighter;
     font-size: 1.2em;
