@@ -1,6 +1,6 @@
 <script>
   import Radio from "@smui/radio";
-  import Button from "@smui/button";
+  import Button, { Group } from "@smui/button";
   import { questions, answers, responses, no } from "../stores";
   import "./radio.css";
 
@@ -48,15 +48,30 @@
     {/each}
   </div>
 </form>
-<div class="buttons">
-  <Button type="button" variant="unelevated" on:click={() => changeNo(1)}
-    >Prev</Button
+<Group
+  style="
+    position: fixed;
+    bottom: 3em;"
+>
+  <Button
+    type="button"
+    style="font-size: 2em; padding: 1em; margin: 1em"
+    variant="unelevated"
+    on:click={() => changeNo(1)}>Prev</Button
   >
-  <Button type="button" variant="unelevated" on:click={() => changeNo(0)}
-    >Next</Button
+  <Button
+    type="button"
+    variant="unelevated"
+    style="font-size: 2em; padding: 1em; margin: 1em"
+    on:click={() => changeNo(0)}>Next</Button
   >
-  <Button type="submit" variant="raised" on:click={submit}>Submit</Button>
-</div>
+  <Button
+    type="submit"
+    variant="unelevated"
+    style="font-size: 2em; padding: 1em; margin: 1em"
+    on:click={submit}>Submit</Button
+  >
+</Group>
 
 <style>
   form {
@@ -94,9 +109,5 @@
   p {
     font-size: 1.5em;
     margin: 0;
-  }
-  .buttons {
-    position: fixed;
-    bottom: 3em;
   }
 </style>
