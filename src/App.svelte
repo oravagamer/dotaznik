@@ -15,6 +15,5 @@
   }
   :global(body) {
     background: linear-gradient(to bottom, #505a99, #5c66a9);
-    margin: 3rem;
   }
 </style>

@@ -23,7 +23,11 @@
   }
 
   $: $responses = [...Array($questions.length).fill("")];
-  // $: console.log($responses);
+  // TODO:
+  // Bigger buttons
+  // Fix width
+  // Animation
+  // Algorithm
 </script>
 
 <form on:submit|preventDefault>
@@ -59,10 +63,16 @@
     display: flex;
     flex-direction: column;
     row-gap: 3em;
+    padding: 4em;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 4em;
+    max-width: 32rem;
   }
   .wrapper {
     display: flex;
     flex-direction: column;
+    max-width: 32rem;
   }
   span {
     font-weight: lighter;
@@ -73,7 +83,7 @@
   }
   h2 {
     font-size: 4em;
-    margin-top: 2em;
+    margin-top: 0;
     margin-bottom: 6px;
   }
   h3 {
