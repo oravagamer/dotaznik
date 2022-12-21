@@ -1,15 +1,21 @@
 <script>
-  let count = 0;
+  import Select from "./lib/Select.svelte";
 </script>
 
-<main>
-  <button on:click={() => count++}>click me {count}</button>
-</main>
+<div class="wrapper">
+  <main>
+    <Select />
+  </main>
+</div>
 
 <style>
+  .wrapper {
+    display: flex;
+    justify-content: center;
+  }
   main {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
+    flex-direction: column;
   }
 </style>
