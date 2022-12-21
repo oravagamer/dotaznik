@@ -22,5 +22,6 @@
       #7d84b4,
       #9198ca
     );
+    margin: 3rem;
   }
 </style>
