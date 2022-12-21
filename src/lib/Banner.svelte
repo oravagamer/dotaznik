@@ -42,8 +42,8 @@
     margin: 0;
   }
   .favicon {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     margin-right: 0.4em;
   }
   a {
