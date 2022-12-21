@@ -1,10 +1,11 @@
 <script>
+  import { fly } from "svelte/transition";
   import LinearProgress from "@smui/linear-progress";
   import { odbory } from "../stores";
 </script>
 
 <h2>Výsledky dotazníka</h2>
-<div class="center form">
+<div class="center form" in:fly={{ y: -150, duration: 600 }}>
   {#each $odbory as item}
     {#if item.percentages}
       <h3>{item.full}</h3>

@@ -1,4 +1,6 @@
 <script>
+  import { fly } from "svelte/transition";
+  import { onMount } from "svelte";
   import Radio from "@smui/radio";
   import Button, { Group } from "@smui/button";
   import {
@@ -10,6 +12,11 @@
     isGenerated,
   } from "../stores";
   import "./radio.css";
+
+  let mountReady = false;
+  onMount(() => {
+    mountReady = true;
+  });
 
   function getWeight(response) {
     switch (response) {
@@ -89,38 +96,45 @@
   // Animation
 </script>
 
-<form class="form" on:submit|preventDefault>
-  <div class="survey">
-    <h2>Dotazník</h2>
-    <p>Zodpovedajte nasledujúce otázky:</p>
-  </div>
+{#if mountReady}
+  <form
+    class="form"
+    on:submit|preventDefault
+    in:fly={{ y: -400, duration: 600 }}
+  >
+    <div class="survey">
+      <h2>Dotazník</h2>
+      <p>Zodpovedajte nasledujúce otázky:</p>
+    </div>
 
-  <div class="wrapper">
-    <h3><span>{$no + 1}</span> {$questions[$no]}?</h3>
-    {#each $answers as a, y}
-      <div>
-        <Radio name={`${no}${y}`} bind:group={$responses[$no]} value={a} />
-        <span>
-          {a}
-        </span>
-      </div>
-    {/each}
-  </div>
-  <div class="wrapper2">
-    <img
-      on:click={() => changeNo(1)}
-      src="/prev.svg"
-      alt="prev"
-      width="128px"
-    />
-    <img
-      on:click={() => changeNo(0)}
-      src="/next.svg"
-      alt="prev"
-      width="128px"
-    />
-  </div>
-</form>
+    <div class="wrapper">
+      <h3><span>{$no + 1}</span> {$questions[$no]}?</h3>
+      {#each $answers as a, y}
+        <div>
+          <Radio name={`${no}${y}`} bind:group={$responses[$no]} value={a} />
+          <span>
+            {a}
+          </span>
+        </div>
+      {/each}
+    </div>
+    <div class="wrapper2">
+      <img
+        on:click={() => changeNo(1)}
+        src="/prev.svg"
+        alt="prev"
+        width="128px"
+      />
+      <img
+        on:click={() => changeNo(0)}
+        src="/next.svg"
+        alt="prev"
+        width="128px"
+      />
+    </div>
+  </form>
+{/if}
+
 <Group
   style="
     position: fixed;
