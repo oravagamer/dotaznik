@@ -34,5 +34,6 @@
   }
   :global(body) {
     background: linear-gradient(to bottom, #505a99, #5c66a9);
+    background-image: url("/ai.jfif");
   }
 </style>
