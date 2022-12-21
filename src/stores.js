@@ -19,5 +19,6 @@ const questions = writable([
 ]);
 const answers = writable(["Áno", "Asi áno", "Neutrálne", "Skôr nie", "Nie"]);
 const responses = writable([]);
+const no = writable(0);
 
-export { questions, answers, responses };
+export { questions, answers, responses, no };

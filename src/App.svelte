@@ -1,9 +1,9 @@
 <script>
-  import Select from "./lib/Survey.svelte";
+  import Form from "./lib/Form.svelte";
 </script>
 
 <main>
-  <Select />
+  <Form />
 </main>
 
 <style>
