@@ -33,7 +33,8 @@
     flex-direction: column;
   }
   :global(body) {
-    background: linear-gradient(to bottom, #505a99, #5c66a9);
     background-image: url("/ai.jfif");
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 </style>

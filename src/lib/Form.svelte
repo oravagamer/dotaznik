@@ -138,7 +138,7 @@
     row-gap: 3em;
     padding: 4em;
     border-radius: 1rem;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.8);
     margin-top: 4em;
     max-width: 32rem;
   }
