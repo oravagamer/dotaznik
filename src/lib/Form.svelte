@@ -1,11 +1,71 @@
 <script>
   import Radio from "@smui/radio";
   import Button, { Group } from "@smui/button";
-  import { questions, answers, responses, no } from "../stores";
+  import {
+    odbory,
+    questions,
+    answers,
+    responses,
+    no,
+    isGenerated,
+  } from "../stores";
   import "./radio.css";
 
+  function getWeight(response) {
+    switch (response) {
+      case "Áno":
+        return 1;
+      case "Skôr áno":
+        return 0.5;
+      case "Neutrálne":
+        return 0;
+      case "Skôr nie":
+        return -0.5;
+      case "Nie":
+        return -1;
+    }
+  }
+
+  function allAnswered() {
+    for (let i = 0; i < $responses.length; i++) {
+      if ($responses[i] == "") {
+        alert("Prosím zodpovedaj všetky otázky.");
+        $isGenerated = false;
+        break;
+      }
+    }
+  }
+
+  function getPercentages() {
+    for (let i = 0; i < $odbory.length; i++) {
+      $odbory[i].percentages =
+        Math.round(
+          ($odbory[i].points / $odbory[i].question.length) * 100 * 100
+        ) / 100;
+    }
+  }
+
   function submit() {
-    console.log($responses);
+    const weightResponses = $responses.map((r) => getWeight(r));
+    for (let i = 0; i < weightResponses.length; i++) {
+      for (let y = 0; y < $odbory.length; y++) {
+        if ($odbory[y].question.includes(i)) {
+          $odbory[y].points += weightResponses[i];
+        }
+      }
+    }
+    getPercentages();
+    $odbory.sort((a, b) => {
+      if (a.percentages < b.percentages) {
+        return 1;
+      }
+      if (a.percentages > b.percentages) {
+        return -1;
+      }
+      return 0;
+    });
+    $isGenerated = true;
+    // allAnswered();
   }
 
   function changeNo(type) {
@@ -24,10 +84,8 @@
 
   $: $responses = [...Array($questions.length).fill("")];
   // TODO:
-  // Bigger buttons
   // Fix width
   // Animation
-  // Algorithm
 </script>
 
 <form on:submit|preventDefault>

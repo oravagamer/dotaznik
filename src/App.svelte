@@ -1,9 +1,15 @@
 <script>
   import Form from "./lib/Form.svelte";
+  import Result from "./lib/Result.svelte";
+  import { isGenerated } from "./stores";
 </script>
 
 <main>
-  <Form />
+  {#if !$isGenerated}
+    <Form />
+  {:else}
+    <Result />
+  {/if}
 </main>
 
 <style>
