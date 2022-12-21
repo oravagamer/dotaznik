@@ -1,3 +1,28 @@
+1. Chcel by si viacej pracovat s pocitacom?
+3. Chcel by si pracovat s elktrinou
+3. Chces sa naucit umelu inteligenciu?
+10. Chces za zaoberat programovanim
+4. Chcel by si pracovat na Pocitacovych sietach
+5. Chcel by si pracovat s nizkoprudovym
+5. Chcel by si pracovat vysokoprudovym napetim
+6. Chcel by si sa naucit robotiku
+7. Chcel  by sa naucit 3D technologie
+8.  Chces pracovat s Elektronika
+9.  Chces pracovat s Elektrotechnikou
+9.  Chces sa naucit nemcinu ako druhy jazyk ?
+12. Chces sa naucit graficky kreslit?
+13. Chcel by si pracovat v programoch ADOBE ?
+14. Chces sa naucit robit webovu stranku/aplikaciu
+
+
+
+
+
+
+
+
+
+
 AI 2569M - 
 	Hlavne programovanie v pythone
 	Algoritmy na spracovanie obrazu, zvuku, a pc grafiky
