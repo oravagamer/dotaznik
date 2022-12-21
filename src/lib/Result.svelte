@@ -9,7 +9,7 @@
     {#if item.percentages}
       <h3>{item.full}</h3>
       <p>{item.percentages}%</p>
-      <LinearProgress progress={item.percentages/100} />
+      <LinearProgress progress={item.percentages / 100} />
       <br />
     {/if}
   {/each}
@@ -19,6 +19,14 @@
   h2 {
     font-size: 3em;
     margin-top: 3em;
+  }
+  h3 {
+    font-weight: 200;
+    margin: 1em 0 !important;
+    font-size: 2em;
+  }
+  p {
+    font-size: 1.4em;
   }
 
   .results {
@@ -32,12 +40,5 @@
   }
   .results > * {
     margin: 0;
-  }
-
-  h3 {
-    font-weight: 200;
-    margin: 1em 0 !important;
-    font-size: 1.8em;
-
   }
 </style>
