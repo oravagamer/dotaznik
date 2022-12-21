@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     min-height: inherit;
+    flex-direction: column;
   }
   :global(#app) {
     display: block;
