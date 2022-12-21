@@ -3,6 +3,7 @@
   import FormField from "@smui/form-field";
   import Button, { Label } from "@smui/button";
   import { questions, answers, responses } from "../stores";
+  import "./radio.css";
 
   // Create a function to update the store
   function updateResponses(newResponses) {
