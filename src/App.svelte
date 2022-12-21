@@ -1,10 +1,12 @@
 <script>
   import Button from "@smui/button";
+  import Banner from "./lib/Banner.svelte";
   import Form from "./lib/Form.svelte";
   import Result from "./lib/Result.svelte";
   import { isGenerated } from "./stores";
 </script>
 
+<Banner />
 <main>
   {#if !$isGenerated}
     <Form />
